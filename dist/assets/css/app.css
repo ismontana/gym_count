@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.4s ease;;
+}
+
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: #6F7FBA;
+    --side-nav: #0A2B5C;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+    
+    /* Bootstrap theme color variables */
+    --bs-bg-card: #fff;
+    --bs-text-card: #000;
+    --bs-btn-primary-bg: #0d6efd;
+    --bs-btn-text: #fff;
+
+    /* Colors primarys  */
+    --color-success: #198754;
+    --color-warning: #FFC107;
+    --color-danger: #DC3545;
+}
+
+body.dark{
+    --body-color: #202428;
+    --nav-color: #2c3843;
+    --side-nav: #191f25;
+    --text-color: #CCC;
+    --search-bar: #242526;
+    
+    /* Bootstrap dark theme overrides */
+    --bs-bg-card: #2c3843;  /* Color de fondo para las cards en modo oscuro */
+    --bs-text-card: #fff;   /* Color de texto para las cards en modo oscuro */
+    --bs-btn-primary-bg: #375a7f;   /* Color de fondo para botones en modo oscuro */
+    --bs-btn-text: #e3e3e3;    /* Color de texto para botones en modo oscuro */
+}
+
+/* Estilos para las cards */
+.card {
+    box-shadow: 0px 3px 20px #0000000b;
+    background-color: var(--bs-bg-card);
+    color: var(--bs-text-card);
+    border: none;
+}
+
+.card .card-title, .card .card-text {
+    color: var(--bs-text-card);
+}
+
+.card-title{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+/* Estilos para los botones */
+.btn-primary {
+    background-color: var(--bs-btn-primary-bg);
+    color: var(--bs-btn-text);
+    border: none;
+    transition: .5s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--bs-btn-primary-bg / 1);
+}
+
+
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}
+
+body.dark nav{
+    border: 1px solid #393838;
+
+}
+
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle{
+    display: none;
+}
+
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchBox{
+    position: relative;
+}
+
+.searchBox .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.search-field input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--search-text);
+    background-color: var(--search-bar);
+}
+
+body.dark .search-field input{
+    color: var(--text-color);
+}
+
+.search-field i{
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+body.dark .search-field i{
+    color: var(--text-color);
+}
+
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu{
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+.toTop {
+    border: none;
+    display: flex;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    position: fixed; right: 1rem; bottom: 1rem; z-index: 9999;
+  }
+  .toTop:not(.is-visible) {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  .toTop .bx-chevron-up {
+    font-size: 2rem;
+    stroke-width: 3px;
+    stroke: currentColor;
+    fill: none;
+  }
+  
+  .toTop {
+    background-color: var(--nav-color);
+    box-shadow: 0px 3px 20px #000000ad;
+    border-radius: 40%;
+    padding: 0.75rem;
+    color: #fff;
+  }
+
+.carousel-item img {
+    opacity: 40%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.carousel-container {
+    background: linear-gradient(to top, #000, 80%, #c7c7c7);
+}
+
+.carousel-caption{
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.218);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.cards-container{
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    gap: .5rem;
+}
+
+.card-img, 
+.card-img-top {
+    object-fit: cover;
+    height: 80%;
+}
+
+.bx-check-circle{
+    font-size: 1.5rem;
+    color: var(--color-success);
+}
+
+.bx-error-circle{
+    font-size: 1.5rem;
+    color: var(--color-warning);
+}
+
+.bx-x-circle{
+    font-size: 1.5rem;
+    color: var(--color-danger);
+}
+
+.day_indicator{
+    margin: 1rem;
+    width: 100%;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    text-align: center;
+    font-weight: 600;
+    color: var(--bs-text-card);
+}
