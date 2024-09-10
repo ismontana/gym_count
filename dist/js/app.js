@@ -51,3 +51,53 @@ function showBestFoods() {
         document.getElementById(uniqueId).classList.add('dark');
     }
 }
+
+function createMacros() {
+    const ctx = document.getElementById('macrosChart').getContext('2d');
+
+    const macrosData = {
+        labels: ['Proteína', 'Carbohidratos', 'Grasas', 'Fibra', 'Azúcares', 'Sodio', 'Colesterol'],
+        datasets: [{
+            label: 'Gramos',
+            data: [25, 45, 20, 15, 10, 5, 30], // Example values, you can replace these with dynamic data.
+            backgroundColor: [
+                'rgba(34, 136, 217, 0.5)', //Azul
+                'rgba(60, 135, 12, 0.5)', //Verde
+                'rgba(226, 30, 13, 0.5)', //Rojo
+                'rgba(247, 174, 0, 0.5)', //Amarillo
+                'rgba(214, 7, 103, 0.5)', //Rosa
+                'rgba(236, 109, 0, 0.5)', //Naranja
+                'rgba(97, 106, 182, 0.5)', //Morado
+            ],
+            borderColor: [
+                'rgba(34, 136, 217, 1)', //Azul
+                'rgba(60, 135, 12, 1)', //Verde
+                'rgba(226, 30, 13, 1)', //Rojo
+                'rgba(247, 174, 0, 1)', //Amarillo
+                'rgba(214, 7, 103, 1)', //Rosa
+                'rgba(236, 109, 0, 1)', //Naranja
+                'rgba(97, 106, 182, 1)', //Morado
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    new Chart(ctx, {
+        type: 'polarArea',
+        data: macrosData,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right',
+                },
+            },
+        }
+    });
+}
+
+$('#macrosModal').on('shown.bs.modal', function () {
+    createMacros();
+});
+
+

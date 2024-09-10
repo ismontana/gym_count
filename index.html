@@ -180,6 +180,9 @@
                     </ul>
                 </div>
 
+                <div class="title-steps">
+                    <i class='bx bxs-bowl-hot' ></i>Pasos
+                </div>
                 <div class="cont-steps">
 
                     <div class="step">
@@ -217,14 +220,17 @@
 
     <!-- Modal Macros -->
     <div class="modal fade" id="macrosModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="macrosModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
             <h1 class="modal-title fs-5" id="macrosModalLabel">Macros</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            ...
+                <div class="bg-macrosChart">
+                    <p id="kcalMacroModal">854kcal</p>
+                    <canvas id="macrosChart" width="300" height="100"></canvas>
+                </div>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#recipeModal">Volver</button>
@@ -236,7 +242,8 @@
 
     <!-- BEGIN LINK JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="dist/js/app.js"></script>
     <script src="dist/js/switch_theme.js"></script>
 
@@ -257,7 +264,7 @@
             })
           }
         })();
-     </script>
+    </script>
     <!-- END LINK JS -->
 
 </body>
