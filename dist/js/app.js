@@ -59,24 +59,24 @@ function createMacros() {
         labels: ['Proteína', 'Carbohidratos', 'Grasas', 'Fibra', 'Azúcares', 'Sodio', 'Colesterol'],
         datasets: [{
             label: 'Gramos',
-            data: [25, 45, 20, 15, 10, 5, 30], // Example values, you can replace these with dynamic data.
+            data: [25, 45, 20, 15, 10, 5, 30], // Valores de ejemplo
             backgroundColor: [
-                'rgba(34, 136, 217, 0.5)', //Azul
-                'rgba(60, 135, 12, 0.5)', //Verde
-                'rgba(226, 30, 13, 0.5)', //Rojo
-                'rgba(247, 174, 0, 0.5)', //Amarillo
-                'rgba(214, 7, 103, 0.5)', //Rosa
-                'rgba(236, 109, 0, 0.5)', //Naranja
-                'rgba(97, 106, 182, 0.5)', //Morado
+                'rgba(34, 136, 217, 0.5)', // Azul
+                'rgba(60, 135, 12, 0.5)',  // Verde
+                'rgba(226, 30, 13, 0.5)',  // Rojo
+                'rgba(247, 174, 0, 0.5)',  // Amarillo
+                'rgba(214, 7, 103, 0.5)',  // Rosa
+                'rgba(236, 109, 0, 0.5)',  // Naranja
+                'rgba(97, 106, 182, 0.5)', // Morado
             ],
             borderColor: [
-                'rgba(34, 136, 217, 1)', //Azul
-                'rgba(60, 135, 12, 1)', //Verde
-                'rgba(226, 30, 13, 1)', //Rojo
-                'rgba(247, 174, 0, 1)', //Amarillo
-                'rgba(214, 7, 103, 1)', //Rosa
-                'rgba(236, 109, 0, 1)', //Naranja
-                'rgba(97, 106, 182, 1)', //Morado
+                'rgba(34, 136, 217, 1)',   // Azul
+                'rgba(60, 135, 12, 1)',    // Verde
+                'rgba(226, 30, 13, 1)',    // Rojo
+                'rgba(247, 174, 0, 1)',    // Amarillo
+                'rgba(214, 7, 103, 1)',    // Rosa
+                'rgba(236, 109, 0, 1)',    // Naranja
+                'rgba(97, 106, 182, 1)',   // Morado
             ],
             borderWidth: 1
         }]
@@ -90,6 +90,22 @@ function createMacros() {
             plugins: {
                 legend: {
                     position: 'right',
+                    labels: {
+                        generateLabels: function(chart) {
+                            const data = chart.data;
+                            return data.labels.map(function(label, index) {
+                                const value = data.datasets[0].data[index];
+                                return {
+                                    text: `${label} ${value}g`,
+                                    fillStyle: data.datasets[0].backgroundColor[index],
+                                    strokeStyle: data.datasets[0].borderColor[index],
+                                    lineWidth: data.datasets[0].borderWidth,
+                                    hidden: false,
+                                    index: index
+                                };
+                            });
+                        }
+                    }
                 },
             },
         }
