@@ -11,10 +11,11 @@
 :root{
     --body-color: #E4E9F7;
     --nav-color: #6F7FBA;
-    --side-nav: #0A2B5C;
+    --side-nav: #39557d;
     --text-color: #FFF;
     --search-bar: #F2F2F2;
     --search-text: #010718;
+    --counter-step: #4e6380;
     
     /* Bootstrap theme color variables */
     
@@ -46,6 +47,7 @@ body.dark{
     --side-nav: #191f25;
     --text-color: #CCC;
     --search-bar: #242526;
+    --counter-step: #3c5b7a;
     
     /* Bootstrap dark theme overrides */
 
@@ -492,3 +494,56 @@ body.dark .search-field i{
     background: var(--bs-btn-outln-dark);
     color: var(--bs-btn-outln-text);
 }
+
+.title-ingrdnt{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.ingrdnts li{
+    background: var(--side-nav);
+    color: var(--text-color);
+    width: fit-content;
+    margin-bottom: .15rem;
+    padding: .1rem .4rem;
+    font-size: 18px;
+    font-weight: 200;
+    border-radius: 10px;
+}
+
+.ingrdnts li::marker{
+    color: var(--side-nav);
+}
+
+.cont-steps{
+    display: grid;
+    gap: 2rem;
+}
+
+.step{
+    display: flex;
+    align-items: start;
+    min-height: 10%;
+    gap: .5rem;
+}
+
+.counter-step{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    padding: 1rem;
+    background: var(--counter-step);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.txt-step{
+    padding: .3rem 0;
+}
+
