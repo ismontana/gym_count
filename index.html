@@ -68,44 +68,50 @@
                         <h5>Comida 1</h5>
                         <i class='bx bx-check-circle'></i>
                     </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver más</a>
+                    <div class="cont-card-txt">
+                        <div class="card-text">
+                            <i class='bx bx-hourglass'></i>
+                            20 minutos
+                        </div>
+                        <div class="card-text">
+                            8:30am
+                            <i class='bx bxs-time' ></i>
+                        </div>
+                    </div>
+
+                    <div class="bottom-card">
+                        <div class="calories-preview"><i class='bx bx-bowl-hot' ></i>360 Calorías</div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal">
+                            Abrir
+                        </button>
+                    </div>
+
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
                 <img src="dist/assets/img/food3.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h5>Comida 3</h5>
-                        <i class='bx bx-x-circle' ></i>
-                    </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="dist/assets/img/food2.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <div class="card-title">
                         <h5>Comida 2</h5>
-                        <i class='bx bx-error-circle pendig'></i>
+                        <i class='bx bx-x-circle' ></i>
                     </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="dist/assets/img/food3.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h5>Comida 4</h5>
-                        <i class='bx bx-error-circle pendig'></i>
+                    <div class="cont-card-txt">
+                        <div class="card-text">
+                            <i class='bx bx-hourglass'></i>
+                            30 minutos
+                        </div>
+                        <div class="card-text">
+                            12:15pm
+                            <i class='bx bxs-time' ></i>
+                        </div>
                     </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver más</a>
+                    <div class="bottom-card">
+                        <div class="calories-preview"><i class='bx bx-bowl-hot' ></i>470 Calorías</div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal">
+                            Abrir
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -113,23 +119,25 @@
                 <img src="dist/assets/img/food2.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <div class="card-title">
-                        <h5>Comida 5</h5>
+                        <h5>Comida 3</h5>
                         <i class='bx bx-error-circle pendig'></i>
                     </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="dist/assets/img/food1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h5>Comida 6</h5>
-                        <i class='bx bx-error-circle pendig'></i>
+                    <div class="cont-card-txt">
+                        <div class="card-text">
+                            <i class='bx bx-hourglass'></i>
+                            15 minutos
+                        </div>
+                        <div class="card-text">
+                            2:30pm
+                            <i class='bx bxs-time' ></i>
+                        </div>
                     </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver más</a>
+                    <div class="bottom-card">
+                        <div class="calories-preview"><i class='bx bx-bowl-hot' ></i>549 Calorías</div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal">
+                            Abrir
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -140,6 +148,45 @@
             <i class='bx bx-chevron-up'></i>
         </button>
 
+    </div>
+
+    <!-- Button trigger modal -->
+
+  
+    <!-- Modal Recipe -->
+    <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="recipeModalLabel">Receta ${comida}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-outln-dark" data-bs-toggle="modal" data-bs-target="#macrosModal"><i class='bx bxs-doughnut-chart' ></i>Macros</button>
+            <button type="button" class="btn btn-primary">Realizado</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Macros -->
+    <div class="modal fade" id="macrosModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="macrosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="macrosModalLabel">Macros</h1>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#recipeModal">Volver</button>
+            </div>
+        </div>
+        </div>
     </div>
       
 

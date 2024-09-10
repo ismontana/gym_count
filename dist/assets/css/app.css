@@ -17,10 +17,22 @@
     --search-text: #010718;
     
     /* Bootstrap theme color variables */
-    --bs-bg-card: #fff;
+    
+    /* Bootstrap cards */
+    --bs-bg-card: #fff; 
     --bs-text-card: #000;
+
+    /* Bootstrap modal */
+    --bs-bg-modal: #E4E9F7;
+    --bs-text-modal: #000;
+
+    /* Bootstrap buttons */
     --bs-btn-primary-bg: #0d6efd;
     --bs-btn-text: #fff;
+
+    --bs-btn-outln-dark: #212529;
+    --bs-btn-outln-text: #fff;
+    --bs-btn-outln-dark-bg: transparent;
 
     /* Colors primarys  */
     --color-success: #198754;
@@ -36,10 +48,22 @@ body.dark{
     --search-bar: #242526;
     
     /* Bootstrap dark theme overrides */
-    --bs-bg-card: #2c3843;  /* Color de fondo para las cards en modo oscuro */
-    --bs-text-card: #fff;   /* Color de texto para las cards en modo oscuro */
-    --bs-btn-primary-bg: #375a7f;   /* Color de fondo para botones en modo oscuro */
-    --bs-btn-text: #e3e3e3;    /* Color de texto para botones en modo oscuro */
+
+    /* Bootstrap cards */
+    --bs-bg-card: #2c3843;
+    --bs-text-card: #fff;
+
+    /* Bootstrap modal */
+    --bs-bg-modal: #2c3843;
+    --bs-text-modal: #fff;
+
+    /* Bootstrap buttons */
+    --bs-btn-primary-bg: #375a7f;
+    --bs-btn-text: #e3e3e3;
+
+    --bs-btn-outln-dark: #fff;
+    --bs-btn-outln-text: #000;
+    --bs-btn-outln-dark-bg: transparent;
 }
 
 /* Estilos para las cards */
@@ -392,6 +416,8 @@ body.dark .search-field i{
 .card-img-top {
     object-fit: cover;
     height: 80%;
+    padding: .6rem;
+    border-radius: 6%;
 }
 
 .bx-check-circle{
@@ -409,6 +435,31 @@ body.dark .search-field i{
     color: var(--color-danger);
 }
 
+.cont-card-txt{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.card-text{
+    display: flex;
+    align-items: center;
+    gap: .15rem;
+    font-size: 16px;
+}
+
+.bottom-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calories-preview{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
 .day_indicator{
     margin: 1rem;
     width: 100%;
@@ -416,4 +467,28 @@ body.dark .search-field i{
     text-align: center;
     font-weight: 600;
     color: var(--bs-text-card);
+}
+
+.modal-content{
+    background-color: var(--bs-bg-modal);
+    color: var(--bs-text-modal);
+}
+
+.btn-close{
+    background-color: #fff;
+}
+
+.btn-outln-dark{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    color: var(--bs-btn-outln-dark);
+    border: 1.5px solid var(--bs-btn-outln-dark);
+    background: var(--bs-btn-outln-dark-bg);
+    transition: .5s ease;
+}
+
+.btn-outln-dark:hover{
+    background: var(--bs-btn-outln-dark);
+    color: var(--bs-btn-outln-text);
 }
