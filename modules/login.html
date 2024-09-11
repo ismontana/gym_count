@@ -1,75 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta Nombre="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../dist/assets/css/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <div class="body-log">
-        <div class="container-log" id="container-log">
-            <div class="form-container sign-up-container">
-                <form action="#">
-                    <h1>Crea una tu cuenta</h1>
-                    <!-- <div class="social-container">
-                        <a href="#" class="social"><i class='bx bxl-facebook' ></i></a>
-                        <a href="#" class="social"><i class='bx bxl-google' ></i></a>
-                        <a href="#" class="social"><i class='bx bxl-instagram-alt' ></i></a>
-                    </div>
-                    <span>or use your email for registration</span> -->
-                    <input type="text" placeholder="Nombre" />
-                    <input type="email" placeholder="Correo" />
-                    <div class="cont-pass c_p_sing">
-                        <input type="password" id="password_sing" placeholder="Contraseña" />
-                        <button type="button" class="btn btn-Pass btn-hidePass b_p_sing" onclick="showPass_sing();">
-                            <i class="fa-solid fa-eye-slash"></i>
-                        </button>
-                    </div>
-                    <button class="logSing" type="submit">Registrar</button>
-                </form>
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="../dist/assets/css/log.css" />
+
+    <title>Responsive login form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <div class="login__content">
+          <img class="login__img" src="../dist/assets/img/bg-login.png" alt="Login image" />
+
+          <form class="login__form">
+            <div>
+              <h1 class="login__title">
+                <span>Bienvenido</span> gymbro
+              </h1>
+
+              <p class="login__description">
+                Por favor inicia sesión para acceder.
+              </p>
             </div>
-            <div class="form-container sign-in-container">
-                <form action="#">
-                    <h1>Inicia sesión</h1>
-                    <!-- <div class="social-container">
-                        <a href="#" class="social"><i class='bx bxl-facebook' ></i></a>
-                        <a href="#" class="social"><i class='bx bxl-google' ></i></a>
-                        <a href="#" class="social"><i class='bx bxl-instagram-alt' ></i></a>
-                    </div>
-                    <span>or use your account</span> -->
-                    <input type="email" placeholder="Correo" />
-                    <div class="cont-pass c_p_log">
-                        <input type="password" id="password_log" placeholder="Contraseña" />
-                        <button type="button" class="btn btn-Pass btn-hidePass b_p_log" onclick="showPass_log();">
-                            <i class="fa-solid fa-eye-slash"></i>
-                        </button>
-                    </div>
-                    <a href="#">¿Olvidaste tu contraseña?</a>
-                    <button class="logSing" type="submit">Ingresar</button>
-                </form>
-            </div>
-            <div class="overlay-container">
-                <div class="overlay">
-                    <div class="overlay-panel overlay-left">
-                        <h1>¿Ya tienes una cuenta?</h1>
-                        <p>Entra aquí e inicia sesión!</p>
-                        <button class="ghost logSing" id="signIn">Iniciar sesión</button>
-                    </div>
-                    <div class="overlay-panel overlay-right">
-                        <h1>¿Aún no tienes una cuenta?</h1>
-                        <p>Entra aquí y registrate!</p>
-                        <button class="ghost logSing" id="signUp">Registarme</button>
-                    </div>
+
+            <div>
+              <div class="login__inputs">
+                <div>
+                  <label for="email" class="login__label">Correo</label>
+                  <input class="login__input" type="email" id="email" placeholder="Ingresa tu correo" required />
                 </div>
+
+                <div>
+                  <label for="password" class="login__label">Contraseña</label>
+                  <div class="login__box">
+                    <input class="login__input" type="password" id="password" placeholder="Ingresa tu contraseña" required />
+                    <i class="ri-eye-off-line login__eye" id="input-icon"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="login__check">
+                <label class="login__check-label" for="check">
+                  <input class="login__check-input" type="checkbox" id="check" />
+                  <i class="ri-check-line login__check-icon"></i>
+                  Recordarme
+                </label>
+              </div>
             </div>
+
+            <div>
+              <div class="login__buttons">
+                <button class="login__button">Iniciar sesión</button>
+                <a href="singin.html" class="login__button login__button-ghost">Registrarme</a>
+              </div>
+
+              <a class="login__forgot" href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
-<script src="../dist/js/login.js"></script>
-<!-- <script src="../dist/js/switch_theme.js"></script> -->
-</body>
+  <!--=============== MAIN JS ===============-->
+  <script src="../dist/js/login.js"></script>
+  </body>
 </html>
