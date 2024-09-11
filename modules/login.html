@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta Nombre="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/assets/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="body-log">
+        <div class="container-log" id="container-log">
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Crea una tu cuenta</h1>
+                    <!-- <div class="social-container">
+                        <a href="#" class="social"><i class='bx bxl-facebook' ></i></a>
+                        <a href="#" class="social"><i class='bx bxl-google' ></i></a>
+                        <a href="#" class="social"><i class='bx bxl-instagram-alt' ></i></a>
+                    </div>
+                    <span>or use your email for registration</span> -->
+                    <input type="text" placeholder="Nombre" />
+                    <input type="email" placeholder="Correo" />
+                    <div class="cont-pass c_p_sing">
+                        <input type="password" id="password_sing" placeholder="Contraseña" />
+                        <button type="button" class="btn btn-Pass btn-hidePass b_p_sing" onclick="showPass_sing();">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </button>
+                    </div>
+                    <button class="logSing" type="submit">Registrar</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Inicia sesión</h1>
+                    <!-- <div class="social-container">
+                        <a href="#" class="social"><i class='bx bxl-facebook' ></i></a>
+                        <a href="#" class="social"><i class='bx bxl-google' ></i></a>
+                        <a href="#" class="social"><i class='bx bxl-instagram-alt' ></i></a>
+                    </div>
+                    <span>or use your account</span> -->
+                    <input type="email" placeholder="Correo" />
+                    <div class="cont-pass c_p_log">
+                        <input type="password" id="password_log" placeholder="Contraseña" />
+                        <button type="button" class="btn btn-Pass btn-hidePass b_p_log" onclick="showPass_log();">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </button>
+                    </div>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                    <button class="logSing" type="submit">Ingresar</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>¿Ya tienes una cuenta?</h1>
+                        <p>Entra aquí e inicia sesión!</p>
+                        <button class="ghost logSing" id="signIn">Iniciar sesión</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>¿Aún no tienes una cuenta?</h1>
+                        <p>Entra aquí y registrate!</p>
+                        <button class="ghost logSing" id="signUp">Registarme</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="../dist/js/login.js"></script>
+<!-- <script src="../dist/js/switch_theme.js"></script> -->
+</body>
+</html>
