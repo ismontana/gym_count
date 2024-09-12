@@ -70,6 +70,31 @@ body.dark{
     --bs-btn-outln-dark-bg: transparent;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	select:focus,
+	textarea:focus,
+	input:focus {
+		font-size: 16px;
+	}
+}
+
+.intro_show {
+    animation-name: entrada;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+  }
+  
+  @keyframes entrada {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 .footer{
     background: var(--side-nav);
     padding:30px 0px;
