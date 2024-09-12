@@ -580,13 +580,13 @@ body.dark .search-field i{
     background-color: #fff;
 }
 
-.btn-dl-recipe{
+.btn-dl{
     display: flex;
     align-items: center;
     gap: .2rem;
 }
 
-.btn-dl-recipe .bxs-downvote{
+.btn-dl .bxs-downvote{
     font-size: 18px;
 }
 

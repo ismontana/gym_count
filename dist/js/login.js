@@ -25,6 +25,14 @@ const showHiddenPassword = (inputPassword, inputIcon) => {
         iconEye.classList.add('ri-eye-off-line')
       }
     })
-  }
+}
   
   showHiddenPassword('password', 'input-icon')
+
+  window.onload = function() {
+    var myInput = document.getElementById('password');
+    
+    myInput.oncopy = function(e) {
+      e.preventDefault();
+    }
+  }

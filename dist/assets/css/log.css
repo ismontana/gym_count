@@ -162,6 +162,33 @@ img {
   cursor: pointer;
 }
 
+.login__check{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: var(--small-font-size);
+}
+
+.tC_text{
+    background: none;
+    border: none;
+}
+
+.tC_text a{
+    cursor: pointer;
+    color: var(--first-color-login) !important;
+}
+
+.btn-dl{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.btn-dl .bxs-downvote{
+    font-size: 18px;
+}
+
 .login__check-label {
   position: relative;
   display: flex;
@@ -203,12 +230,13 @@ img {
 
 .login__button {
   width: 100%;
-  padding: 14px 2rem;
+  padding: 12px 1rem;
   border-radius: 6px;
   background: linear-gradient(180deg, var(--first-color-login), var(--second-color-login));
   color: #fff;
   font-size: var(--small-font-size);
   font-weight: var(--font-semi-bold);
+  text-align: center;
   box-shadow: 0 6px 24px hsla(221, 75%, 48%, 0.5);
   margin-bottom: 1rem;
 }
@@ -312,3 +340,12 @@ img {
     border: 2.5px solid var(--first-color-login);
   }
 }
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
