@@ -1,0 +1,91 @@
+body, html {
+              font-family: Arial, sans-serif;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              margin: 0;
+              background-color: #1f1f1f;
+          }
+          
+          .roulette-container {
+              text-align: center;
+              background: #23292B;
+              padding: 20px;
+              border-radius: 8px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          }
+          
+          .container {
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+          
+          .wheel {
+              width: 300px;
+              height: 300px;
+              border-radius: 50%;
+              position: relative;
+              overflow: hidden;
+              transform-origin: center;
+              transition: transform 5s cubic-bezier(0.33, 1, 0.68, 1);
+          }
+          
+          .segment {
+              width: 50%;
+              height: 50%;
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform-origin: 0 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.5em;
+              font-weight: bold;
+              color: white;
+              clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          }
+          
+          .segment1 { background-color: #001219; transform: rotate(0deg) skewY(-38.57deg); }
+          .segment2 { background-color: #005f73; transform: rotate(51.43deg) skewY(-38.57deg); }
+          .segment3 { background-color: #0a9396; transform: rotate(102.86deg) skewY(-38.57deg); }
+          .segment4 { background-color: #94d2bd; transform: rotate(154.29deg) skewY(-38.57deg); }
+          .segment5 { background-color: #e9d8a6; transform: rotate(205.72deg) skewY(-38.57deg); }
+          .segment6 { background-color: #ee9b00; transform: rotate(257.15deg) skewY(-38.57deg); }
+          .segment7 { background-color: #ca6702; transform: rotate(308.58deg) skewY(-38.57deg); }
+          
+          #spin-btn {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              padding: 30px 22px;
+              font-size: 16px;
+              background-color: #04140d;
+              color: #198754;
+              font-weight: bold;
+              border: none;
+              cursor: pointer;
+              border-radius: 50%;
+              z-index: 10;
+          }
+          
+          #spin-btn:disabled {
+              background-color: #cdcdcd;
+              color: #919191;
+              cursor: not-allowed;
+          }
+          
+          #selector-name {
+              font-size: 24px;
+              margin-bottom: 20px;
+              color: #f9f6ff;
+          }
+
+          .div:where(.swal2-container) .div:where(.swal2-popup){
+              background: red !important;
+          }
+          
