@@ -55,9 +55,9 @@ function girar() {
         const seleccionado = elegirNombreAleatorio(posibleSeleccionados);
 
         // SweetAlert para el destinatario
-        Swal.fire({
-            title: `${seleccionado} te toco tu chilito ${actualSelector} 😍😘😘 `,
-            icon: 'question',
+        Swal.fire({ 
+            title: `${seleccionado} te tocó tu chilito, ${actualSelector} 😍😘😘 `,
+            icon: 'question', 
             confirmButtonText: 'Siguiente'
         });
 
